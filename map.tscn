@@ -1,17 +1,22 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://plate.gd" type="Script" id=1]
 [ext_resource path="res://hpi.svg.2018_09_15_11_18_59.0.svg" type="Texture" id=2]
 [ext_resource path="res://plate.tscn" type="PackedScene" id=3]
+[ext_resource path="res://player.tscn" type="PackedScene" id=4]
 
 [node name="Spatial" type="Spatial"]
 script = ExtResource( 1 )
 
+[node name="Camera" type="Camera" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 49.266, 0 )
+
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform( 3, 0, 0, 0, -1.31134e-007, 3, 0, -3, -1.31134e-007, 0, 0, 0 )
+transform = Transform( 3, 0, 0, 0, -1.31134e-07, 3, 0, -3, -1.31134e-07, 0, 0, 0 )
 texture = ExtResource( 2 )
 
 [node name="Spatial" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="plate" parent="Spatial" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.815, 0, -3.85601 )
@@ -212,6 +217,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5228, 0, 14.6009 )
 reachable = [ null, null ]
 
 [node name="abc_lake" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="plate" parent="abc_lake" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -4.945, 0, -1.36165 )
@@ -256,4 +262,9 @@ reachable = [ null, null ]
 [node name="plate11" parent="abc_lake" instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5793, 0, 9.66885 )
 reachable = [ null, null ]
+
+[node name="player" parent="." instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8396, 0, 14.6961 )
+last_plate = NodePath("../Spatial/plate3")
+current_plate = NodePath("../Spatial/plate4")
 
