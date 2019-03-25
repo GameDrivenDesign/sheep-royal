@@ -122,5 +122,92 @@ reachable = [ NodePath("") ]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 34.1243, 0, -5.9766 )
 reachable = [ NodePath("") ]
 
-[node name="Spatial2" type="Spatial" parent="."]
+[node name="start_to_a" type="Spatial" parent="."]
+editor/display_folded = true
+
+[node name="plate" parent="start_to_a" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7855, 0, -1.56002 )
+reachable = [ null, null ]
+
+[node name="plate2" parent="start_to_a" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7855, 0, 0.730968 )
+reachable = [ null, null ]
+
+[node name="plate3" parent="start_to_a" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7855, 0, 3.11765 )
+reachable = [ null, null ]
+
+[node name="plate4" parent="start_to_a" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7855, 0, 5.37464 )
+reachable = [ null, null ]
+
+[node name="plate5" parent="start_to_a" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7855, 0, 7.55738 )
+reachable = [ null, null ]
+
+[node name="plate6" parent="start_to_a" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7855, 0, 10.016 )
+reachable = [ null, null ]
+
+[node name="plate7" parent="start_to_a" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7855, 0, 12.3135 )
+reachable = [ null, null ]
+
+[node name="plate8" parent="start_to_a" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -25.7855, 0, 14.6002 )
+reachable = [ null, null ]
+
+[node name="plate9" parent="start_to_a" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -23.5138, 0, 14.6002 )
+reachable = [ null, null ]
+
+[node name="plate10" parent="start_to_a" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -21.1482, 0, 14.6002 )
+reachable = [ null, null ]
+
+[node name="plate11" parent="start_to_a" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.7627, 0, 14.6002 )
+reachable = [ null, null ]
+
+[node name="plate12" parent="start_to_a" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -16.4143, 0, 14.6002 )
+reachable = [ null, null ]
+
+[node name="h_to_c" type="Spatial" parent="."]
+
+[node name="plate" parent="h_to_c" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8552, 0, -1.56587 )
+reachable = [ null, null ]
+
+[node name="plate2" parent="h_to_c" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8552, 0, 0.803449 )
+reachable = [ null, null ]
+
+[node name="plate3" parent="h_to_c" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8552, 0, 2.95763 )
+reachable = [ null, null ]
+
+[node name="plate4" parent="h_to_c" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8552, 0, 5.31181 )
+reachable = [ null, null ]
+
+[node name="plate5" parent="h_to_c" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8552, 0, 7.55222 )
+reachable = [ null, null ]
+
+[node name="plate6" parent="h_to_c" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8552, 0, 9.97109 )
+reachable = [ null, null ]
+
+[node name="plate7" parent="h_to_c" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8552, 0, 12.3204 )
+reachable = [ null, null ]
+
+[node name="plate8" parent="h_to_c" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 15.8552, 0, 14.6009 )
+reachable = [ null, null ]
+
+[node name="plate9" parent="h_to_c" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 13.5228, 0, 14.6009 )
+reachable = [ null, null ]
 
