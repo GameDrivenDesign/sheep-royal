@@ -1,11 +1,17 @@
 extends Spatial
 
-export (NodePath) var last_plate
-export (NodePath) var current_plate
+export (NodePath) var last_plate_path
+export (NodePath) var current_plate_path
+
+var last_plate
+var current_plate
 
 var timer = null
 
 func _ready():
+	last_plate = get_node(last_plate_path)
+	current_plate = get_node(current_plate_path)
+	
 	timer = Timer.new()
 	add_child(timer)
 	
@@ -15,7 +21,6 @@ func _ready():
 	timer.start()
 	
 func on_timer_timeout():
-	return
 	var targets = reachable_plates()
 	if (targets.empty()):
 		return
@@ -24,7 +29,7 @@ func on_timer_timeout():
 	
 func reachable_plates():
 	var reachable_from_here = Array()
-	for item in get_node(current_plate).reachable_nodes:
+	for item in current_plate.reachable_nodes():
 		if (item != last_plate):
 			reachable_from_here.append(item)
 	return reachable_from_here
@@ -32,7 +37,10 @@ func reachable_plates():
 func jump_to_plate(new_plate):
 	last_plate = current_plate
 	current_plate = new_plate
+	
+	last_plate_path = last_plate.get_path()
+	current_plate_path = current_plate.get_path()
 
 func _process(delta):
-	var offset = get_node(current_plate).get_transform().origin - self.get_transform().origin
+	var offset = current_plate.get_transform().origin - self.get_transform().origin
 	translate(offset * delta * 4)

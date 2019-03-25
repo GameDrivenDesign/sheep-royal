@@ -263,6 +263,6 @@ reachable = [ NodePath("../plate10"), NodePath("../../h_to_c/plate6") ]
 
 [node name="player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -18.8396, 0, 14.6961 )
-last_plate = NodePath("../Spatial/plate3")
-current_plate = NodePath("../Spatial/plate4")
+last_plate_path = NodePath("../Spatial/plate4")
+current_plate_path = NodePath("../Spatial/plate5")
 
