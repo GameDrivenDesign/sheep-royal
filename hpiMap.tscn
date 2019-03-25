@@ -1,0 +1,12 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://assets/hpiMap/hpiMap.dae" type="PackedScene" id=1]
+
+[node name="Scene Root" index="0" instance=ExtResource( 1 )]
+
+[node name="Ground" parent="." index="0"]
+transform = Transform( 7.61937, 0, 0, 0, 7.61937, 0, 0, 0, 7.61937, -0.00212383, -0.00844049, 0.00298262 )
+
+[node name="HS" parent="." index="5"]
+transform = Transform( -1.44297e-008, 0, -0.468415, 0, 0.181988, 0, 0.330113, 0, -2.04751e-008, -0.682011, 0.195357, 2.16881 )
+
