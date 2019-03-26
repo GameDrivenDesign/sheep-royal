@@ -5,6 +5,8 @@ const DirectionChooser = preload("res://direction_chooser.tscn")
 export (NodePath) var last_plate_path
 export (NodePath) var current_plate_path
 
+signal reached_plate(plate)
+
 const jump_height = 4.5
 const speed = 0.2
 var last_plate
