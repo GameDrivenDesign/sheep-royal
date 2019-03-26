@@ -19,8 +19,6 @@ material = SubResource( 1 )
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0, 1, 0, 1 )
 
-[sub_resource type="CylinderShape" id=2]
-
 [node name="plate" type="Spatial"]
 script = ExtResource( 1 )
 event_material = SubResource( 4 )
@@ -31,11 +29,4 @@ coins_lose_material = SubResource( 6 )
 transform = Transform( 1, 0, 0, 0, 0.05, 0, 0, 0, 1, 0, 0, 0 )
 mesh = SubResource( 2 )
 material/0 = SubResource( 3 )
-
-[node name="StaticBody" type="StaticBody" parent="."]
-visible = false
-
-[node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
-transform = Transform( 1, 0, 0, 0, 0.1, 0, 0, 0, 1, 0, 0, 0 )
-shape = SubResource( 2 )
 

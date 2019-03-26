@@ -11,21 +11,11 @@ const jump_height = 4.5
 const speed = 0.2
 var last_plate
 var current_plate
-
-var timer = null
+var coins = 5
 
 func _ready():
 	last_plate = get_node(last_plate_path)
 	current_plate = get_node(current_plate_path)
-	
-	#timer = Timer.new()
-	#add_child(timer)
-	
-	#timer.connect("timeout", self, "on_timer_timeout")
-	#timer.set_wait_time(1.0)
-	#timer.set_one_shot(false)
-	#timer.start()
-	apply_die_roll(30)
 
 func create_direction_chooser(num_directions):
 	var chooser = DirectionChooser.instance()
@@ -45,6 +35,7 @@ func apply_die_roll(num):
 		jump_to_plate(target)
 		yield(get_tree().create_timer(0.5), "timeout")
 		num -= 1
+	emit_signal("reached_plate", current_plate)
 
 func directions_from_plates(current_plate: Spatial, plates: Array):
 	var directions = []
@@ -53,13 +44,6 @@ func directions_from_plates(current_plate: Spatial, plates: Array):
 		var null_direction = Vector3(1, 0, 0)
 		directions.append(null_direction.angle_to(plate.get_transform().origin - position))
 	return directions
-
-func on_timer_timeout():
-	var targets = reachable_plates()
-	if (targets.empty()):
-		return
-	var target = targets[randi() % targets.size()]
-	jump_to_plate(target)
 
 func reachable_plates():
 	var reachable_from_here = Array()
@@ -94,6 +78,3 @@ func jump_to_plate(new_plate):
 	#	Vector3(0,jump_height,0), Vector3(0,0,0), speed/2,
 	#	Tween.TRANS_SINE, Tween.EASE_IN, speed/2)
 	#tweenF.start()
-
-func _process(delta):
-	pass

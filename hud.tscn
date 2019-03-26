@@ -8,16 +8,16 @@ margin_bottom = 40.0
 script = ExtResource( 1 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_left = 841.0
-margin_top = 19.0
-margin_right = 996.0
-margin_bottom = 111.0
+margin_left = 963.273
+margin_top = 20.3176
+margin_right = 1005.27
+margin_bottom = 60.3176
 color = Color( 0.678431, 0, 0, 1 )
 
 [node name="coins" type="Label" parent="."]
-margin_left = 858.256
-margin_top = 30.7268
-margin_right = 968.256
-margin_bottom = 44.7268
+margin_left = 980.266
+margin_top = 32.5714
+margin_right = 1090.27
+margin_bottom = 46.5714
 text = "0"
 

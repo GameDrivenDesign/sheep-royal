@@ -5,9 +5,13 @@ var maxForce = 200
 
 var stillRolling = true
 
+signal finished(num)
+
 func _ready():
+	randomize()
+	rotation = Vector3(randf() * PI * 2, randf() * PI * 2, randf() * PI * 2)
 	add_torque(Vector3(randi()%maxTorque - maxTorque/2, randi()%maxTorque - maxTorque/2, randi()%maxTorque - maxTorque/2))
-	add_central_force( Vector3(randi()%maxForce - maxForce/2, randi()%maxForce - maxForce/2, randi()%maxForce - maxForce/2))
+	add_central_force(Vector3(randi()%maxForce - maxForce/2, randi()%maxForce - maxForce/2, randi()%maxForce - maxForce/2))
 
 
 func _process(delta):
@@ -15,6 +19,7 @@ func _process(delta):
 		if (linear_velocity.length() <= 0.1 && angular_velocity.length() <= 0.1):
 			stillRolling = false
 			print_debug(currentlyUp())
+			emit_signal("finished", currentlyUp())
 
 #x = 6
 #y = 2

@@ -19,7 +19,7 @@ func _process(dt):
 		set_direction((direction + 1) % num_directions)
 	if Input.is_action_just_pressed("ui_accept"):
 		emit_signal("choose", direction)
-		get_parent().remove_child(self)
+		queue_free()
 
 func set_direction(dir):
 	direction = dir
