@@ -70,8 +70,8 @@ func jump_to_plate(new_plate):
 	last_plate = current_plate
 	current_plate = new_plate
 	
-	$MeshContainer.rotation = Vector3(0, PI + Vector3(-1, 0, 0).angle_to(last_plate.get_transform().origin - current_plate.get_transform().origin), 0)
-	
+	#$MeshContainer.rotation = Vector3(0, PI + Vector3(-1, 0, 0).angle_to(last_plate.get_transform().origin - current_plate.get_transform().origin), 0)
+	$MeshContainer.transform.basis = transform.looking_at(current_plate.get_transform().origin, Vector3.UP).basis
 	last_plate_path = last_plate.get_path()
 	current_plate_path = current_plate.get_path()
 	
