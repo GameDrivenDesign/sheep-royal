@@ -51,7 +51,8 @@ func directions_from_plates(current_plate: Spatial, plates: Array):
 	var position = current_plate.get_transform().origin
 	for plate in plates:
 		var null_direction = Vector3(1, 0, 0)
-		directions.append(null_direction.angle_to(plate.get_transform().origin - position))
+		#directions.append(null_direction.angle_to(plate.get_transform().origin - position))
+		directions.append(transform.looking_at(plate.get_transform().origin, Vector3.UP).basis.get_euler().y + PI/2)
 	return directions
 
 func on_timer_timeout():
