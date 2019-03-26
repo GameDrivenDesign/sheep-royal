@@ -7,16 +7,19 @@ var stillRolling = true
 
 signal finished(num)
 
+var can_read = false
+
 func _ready():
 	randomize()
 	rotation = Vector3(randf() * PI * 2, randf() * PI * 2, randf() * PI * 2)
 	add_torque(Vector3(randi()%maxTorque - maxTorque/2, randi()%maxTorque - maxTorque/2, randi()%maxTorque - maxTorque/2))
 	add_central_force(Vector3(randi()%maxForce - maxForce/2, randi()%maxForce - maxForce/2, randi()%maxForce - maxForce/2))
-
+	yield(get_tree().create_timer(0.5), "timeout")
+	can_read = true
 
 func _process(delta):
-	if (stillRolling == true):
-		if (linear_velocity.length() <= 0.1 && angular_velocity.length() <= 0.1):
+	if stillRolling == true and can_read:
+		if linear_velocity.length() <= 0.1 && angular_velocity.length() <= 0.1:
 			stillRolling = false
 			print_debug(currentlyUp())
 			emit_signal("finished", currentlyUp())

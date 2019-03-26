@@ -12,10 +12,10 @@ func _ready():
 func new_turn():
 	var die_scene = DieScene.instance()
 	add_child(die_scene)
+	die_scene.translation = $player.get_transform().origin
 	var num = yield(die_scene, "finished")
 	$player.apply_die_roll(num)
 	yield($player, "reached_plate")
-	print('REACHED PLATE!')
 	die_scene.queue_free()
 	new_turn()
 

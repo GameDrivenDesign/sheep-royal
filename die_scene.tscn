@@ -15,7 +15,7 @@ script = ExtResource( 1 )
 shape = SubResource( 2 )
 
 [node name="die" parent="." instance=ExtResource( 2 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 13.0528, -3.8941 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.9247, -3.8941 )
 
 [node name="die2" parent="." instance=ExtResource( 2 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.45303, 13.0528, -2.63639 )

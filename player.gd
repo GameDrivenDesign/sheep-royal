@@ -24,7 +24,8 @@ func create_direction_chooser(num_directions):
 	return chooser
 
 func apply_die_roll(num):
-	while num > 0:
+	var steps = num
+	while steps > 0:
 		var targets = reachable_plates()
 		if targets.empty():
 			return
@@ -34,7 +35,7 @@ func apply_die_roll(num):
 		var target = targets[direction]
 		jump_to_plate(target)
 		yield(get_tree().create_timer(0.5), "timeout")
-		num -= 1
+		steps -= 1
 	emit_signal("reached_plate", current_plate)
 
 func directions_from_plates(current_plate: Spatial, plates: Array):
